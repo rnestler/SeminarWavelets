@@ -224,6 +224,43 @@ Wollen wir nun die dritte Ableitung mit dem db3 Wavelet berechnen, ist der Term
 $\frac{10^{-3}}{3!}$ relevant. Der nächste Term $\frac{10^{-4}}{4!}$ ist schon
 um Faktor 40 kleiner.
 
+\subsection{Notes}
+
+Ebenfalls können wir die Ableitung $f'(x)$ als Taylorreihe darstellen.
+
+\begin{align}
+    f'(x) = T f'(x; 0) & = \sum_{n=0}^\infty  \frac{f^{(n+1)}(0)}{n!} x^n = f'(0) + f''(0) x + \frac{f'''(0)}{2}x^2 + \frac{f''''(0)}{6} x^3 + \ldots
+\end{align}
+
+$f(x)$ lässt sich auch folgendermassen darstellen
+\begin{align}
+    f(x) = & f(0) + x (f'(0) + \frac{f''(0)}{2} x + \frac{f'''(0)}{6} x^2 + \ldots) \\
+         = & T_n f(x; a) + R_n f(x; a) \\
+         = & \sum_{k=0}^n {f^{(k)}(a) \over k!}(x-a)^k +\int\limits_a^x \frac{(x-t)^n}{n!} f^{(n+1)}(t) \, \mathrm{d}t
+\end{align}
+
+Definition Ableitung
+
+\begin{align}
+    \frac{d}{dx} f(x) = \frac{f(x_0 + x) - f(x_0)}{x}
+\end{align}
+
+Für Detail Koeffizienten:
+
+\begin{align}
+    D & = \frac{f(x_0) - f(x_0 + x)}{\sqrt{2}} \\
+    -D \frac{\sqrt{2}}{x}  & = \frac{f(x_0 + x) - f(x_0)}{x}
+\end{align}
+
+
+
+
+\begin{align}
+    f(0) + f'(0) x + \frac{f''(0)}{2}x^2    + \frac{f'''(0)}{6} x^3 + \ldots \\
+     0   + f'(0)   + \frac{f''(0) 2 }{2}x^1 + \frac{f'''(0) 3}{6} x^2 + \ldots
+\end{align}
+
+
 Daubechies Wavelets mit $A$ verschwindenden Momenten
 können uns also direkt die $A$-te Ableitung liefern. Dies im Gegensatz zum
 Differenzieren welches mehrfach angewendet werden muss.
